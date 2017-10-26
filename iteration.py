@@ -59,7 +59,6 @@ def average(scores):
 
 def average_without_bottom_two_scores(scores):
 +    current_min = scores[0]
-+    current_min_placement = -1
 +    for n in scores:
 +        if n <= current_min:
 +            current_min = n
