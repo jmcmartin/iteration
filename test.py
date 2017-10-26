@@ -16,3 +16,6 @@ numbers = [1, 2, 3, 4]
 
 print sum(numbers)"""
 
+print average(scores)
+
+print average_without_bottom_two_scores(scores)
