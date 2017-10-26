@@ -63,8 +63,6 @@ def average_without_bottom_two_scores(scores):
   	for n in scores:
         if n <= current_min:
             current_min = n
-
-    scores.remove(current_min)
     
     current_min2 = scores[0]
 
@@ -72,11 +70,9 @@ def average_without_bottom_two_scores(scores):
         if n <= current_min2:
             current_min2 = n
     
-    scores.remove(current_min2)
-    
     sum_without_bottom_two_scores = 0
     
     for n in scores:
         sum_without_bottom_two_scores += n
 
-    return sum_without_bottom_two_scores / len(scores)
+    return (sum_without_bottom_two_scores - current_min - currentmin2) / len(scores)
