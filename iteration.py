@@ -74,7 +74,7 @@ def average_without_bottom_two_scores(scores):
     
     scores.remove(current_min2)
     
-   	sum_without_bottom_two_scores = 0
+    sum_without_bottom_two_scores = 0
     
     for n in scores:
         sum_without_bottom_two_scores += n
