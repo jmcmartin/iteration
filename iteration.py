@@ -11,7 +11,7 @@
 
 # [1, 5, 7 ,8 , 4, 3]
 
-def print_list(list):
+"""def print_list(list):
 	# standard for loop with range
 	# for i in range(0, len(list)):
 	# 	print list[i]
@@ -50,6 +50,8 @@ def maximum(numbers):
 
 	return current_max
 
+#Homework due for 10/26/17
+
 def average(scores):
 	total = 0
 	for n in scores:
@@ -75,4 +77,46 @@ def average_without_bottom_two_scores(scores):
     for n in scores:
         sum_without_bottom_two_scores += n
 
-    return (sum_without_bottom_two_scores - current_min - currentmin2) / len(scores)
+    return (sum_without_bottom_two_scores - current_min - currentmin2) / len(scores)"""
+
+#In class 10/27/17
+
+def alternating_sum(numbers):
+	total = 0
+	for n in numbers:
+		if n == [1, 3, 5]:
+			total += n
+
+		elif n == [2, 4]:
+			total -= n
+
+		else:
+			return total
+
+	print total
+
+def sum_outside(numbers):
+	print "Hello world"
+
+
+def count_close_remainders(numbers2):
+	divisor = 5
+	
+	total_divisible_numbers = 0
+
+	for n in numbers2:
+		if n / divisor:
+			total_divisible_numbers + n
+
+		else:
+			total_divisible_numbers + 0
+
+
+def double_down(numbers3):
+	target_integer = 6
+
+	# Negative numbers to show position from the right
+	close_integers = [-1, -2, -3]
+
+	for n in numbers3:
+		
