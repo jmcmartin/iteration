@@ -18,11 +18,13 @@ numbers2 = [4, 11, 23, 14, 3, 40, 26, 17]
 
 numbers3 = [1, 2, 1, 4, 2]
 
+heights = [600, 470, 170, 430, 300]
+
 """print sum(numbers)
 
 print average(scores)
 
-print average_without_bottom_two_scores(scores)"""
+print average_without_bottom_two_scores(scores)
 
 print alternating_sum(numbers)
 
@@ -30,4 +32,6 @@ print sum_outside(numbers)
 
 print count_close_remainders(numbers2)
 
-print double_down(numbers3)
+print double_down(numbers3)"""
+
+print standard_deviation(heights)

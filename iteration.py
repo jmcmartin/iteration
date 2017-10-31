@@ -81,42 +81,66 @@ def average_without_bottom_two_scores(scores):
 
 #In class 10/27/17
 
-def alternating_sum(numbers):
-	total = 0
-	for n in numbers:
-		if n == [1, 3, 5]:
-			total += n
-
-		elif n == [2, 4]:
-			total -= n
-
+"""def alternating_sum(numbers):
+	total = numbers[0]
+	for i in range(1, len(numbers)):
+		if i % 2 == 0:
+			total += numbers[i]
 		else:
-			return total
+			total -= numbers[i]
 
-	print total
+	return total
+
 
 def sum_outside(numbers):
-	print "Hello world"
+	total = 0
+	for n in numbers:
+		if not (min <= n and n < max):
+			total += n 
 
+	return total
+		
 
 def count_close_remainders(numbers2):
 	divisor = 5
 	
-	total_divisible_numbers = 0
+	count = 0
 
 	for n in numbers2:
-		if n / divisor:
-			total_divisible_numbers + n
+		remainder = n % divisor
+		if remainder <= 1 or remainder == divisor-1:
+			count += 1
 
-		else:
-			total_divisible_numbers + 0
+	return count
 
 
 def double_down(numbers3):
 	target_integer = 6
 
+	previous_integer = n - 1
 	# Negative numbers to show position from the right
 	close_integers = [-1, -2, -3]
 
 	for n in numbers3:
-		
+		if n > previous_integer:
+			n * 2
+
+		elif n = close_integers"""
+
+def standard_deviation(heights):
+	total = 0
+	for n in heights:
+		total += n
+
+	mean1 = total % n
+
+	for n in heights:
+		(n - mean1) * (n - mean1)
+
+	total_final = 0
+	for n in heights:
+		total_final += n
+
+	mean2 = total_final % n
+
+	return mean2
