@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 import sys
+import plotly
+import plotly.graph_objs as go
 
 data = open("cars.csv", "r")
 lines = data.readlines()
@@ -46,7 +48,7 @@ print any_year_list
 #Number 2
 
 
-toyotas_since_2000_years = ["2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017"]
+toyotas_since_2000_years = ["2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013"]
 toyotas_list_since_2000 = []
 
 for i in range(1, len(lines)):
@@ -82,10 +84,18 @@ for color in list_of_colors:
 	else:
 		color_counter[color] = 1
 
+
 popular_colors = sorted(color_counter, key = color_counter.get, reverse = True)
 
 most_popular_color = popular_colors[:1]
 
 print most_popular_color
-#print list_of_colors
+
 print "~~~~~~"
+
+
+"""data = [go.Bar(
+			x = color_counter,
+			y = list_of_colors
+	)]
+plotly.offline.plot(data, filename='basic-bar')"""
