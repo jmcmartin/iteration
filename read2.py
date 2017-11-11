@@ -50,14 +50,13 @@ print cars_any_year(any_year_list)
 #Number 2
 
 
-toyotas_since_2000_years = "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013"
 toyotas_list_since_2000 = []
 
 def toyotas_2000(toyotas_list_since_2000):
 	for i in range(1, len(lines)):
 		info = lines[i].rstrip().split(",")
 
-		if info[1] == "Toyota":
+		if (info[1] == "Toyota") and (info[3] == "2000" or "2001" or "2002" or "2003" or "2004" or "2005" or "2006" or "2007" or "2008" or "2009" or "2010" or "2011" or "2012" or "2013"):
 			toyotas_list_since_2000.append(info[1])
 			toyotas_list_since_2000.append(info[2])
 			toyotas_list_since_2000.append(info[3])
