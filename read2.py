@@ -50,7 +50,7 @@ print cars_any_year(any_year_list)
 #Number 2
 
 
-toyotas_since_2000_years = ["2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013"]
+toyotas_since_2000_years = "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013"
 toyotas_list_since_2000 = []
 
 def toyotas_2000(toyotas_list_since_2000):
@@ -108,7 +108,7 @@ def most_popular_color(car_colors):
 		return current_max
 
 	return maximum(color_counts)
-	return color_counts
+
 
 print most_popular_color(car_colors)
 print "~~~~~~"
