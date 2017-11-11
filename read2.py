@@ -66,7 +66,7 @@ def toyotas_2000(toyotas_list_since_2000):
 
 print "~~~~~~"
 print "Toyotas in list since 2000:"
-print toyotas(toyotas_list_since_2000)
+print toyotas_2000(toyotas_list_since_2000)
 
 
 #Number 3
