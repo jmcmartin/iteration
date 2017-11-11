@@ -108,6 +108,7 @@ def most_popular_color(car_colors):
 		return current_max
 
 	return maximum(color_counts)
+	return color_counts
 
 print most_popular_color(car_colors)
 print "~~~~~~"
