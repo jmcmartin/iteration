@@ -57,13 +57,16 @@ def toyotas_2000(toyotas_list_since_2000):
 	for i in range(1, len(lines)):
 		info = lines[i].rstrip().split(",")
 
-		if info[3] == toyotas_since_2000_years:
+		if info[3] == toyotas_since_2000_years and info[1] == "Toyota":
 			toyotas_list_since_2000.append(info[1])
 			toyotas_list_since_2000.append(info[2])
+			toyotas_list_since_2000.append(info[3])
+	
+	return toyotas_list_since_2000
 
 print "~~~~~~"
 print "Toyotas in list since 2000:"
-print toyotas_list_since_2000
+print toyotas(toyotas_list_since_2000)
 
 
 #Number 3
