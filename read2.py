@@ -75,38 +75,45 @@ print toyotas_2000(toyotas_list_since_2000)
 print "~~~~~~"
 print "Most popular color of car in the list:"
 
-list_of_colors = []
-color_counter = []
+car_colors = []
 
-for i in range(1, len(lines)):
-	info = lines[i].rstrip().split(",")
+def most_popular_color(car_colors):
+	for i in range(1, len(lines)):
+		info = lines[i].rstrip().split(",")
 
-	list_of_colors.append(info[4])
+		car_colors.append(info[4])
+
+	list_of_colors = []
+	for i in range(0, car_colors):
+		if car_colors[i] not in list_of_colors:
+			list_of_colors.append(car_colors[i])
+	
+	color_counts = []
+	for color in list_of_colors:
+		total = 0
+		for car_color in car_colors:
+			if car_color == color:
+				total += 1
+
+		color_counts.append(total)
 
 
-for color in list_of_colors:
-	total = 0
-	if list_of_colors[i] == color:
-		total += 1
+	def maximum(color_counts):
+		current_max = color_counts[0]
+		for n in color_counts:
+			if n > current_max:
+				current_max = n
 
-	color_counter.append(total)
+		return current_max
 
+	return maximum(color_counts)
 
-def maximum(color_counter):
-	current_max = color_counter[0]
-	for n in color_counter:
-		if n > current_max:
-			current_max = n
-
-	return current_max
-
-print maximum(color_counter)
-
+print most_popular_color(car_colors)
 print "~~~~~~"
 
 data = [go.Bar(
 			x = list_of_colors,
-			y = color_counter
+			y = color_counts
 	)]
 plotly.offline.plot(data, filename='basic-bar')
 
