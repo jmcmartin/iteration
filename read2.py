@@ -77,6 +77,7 @@ print "Most popular color of car in the list:"
 
 car_colors = []
 list_of_colors = []
+color_counts = []
 
 def most_popular_color(car_colors):
 	for i in range(1, len(lines)):
@@ -88,7 +89,7 @@ def most_popular_color(car_colors):
 		if car_colors[i] not in list_of_colors:
 			list_of_colors.append(car_colors[i])
 	
-	color_counts = []
+	
 	for color in list_of_colors:
 		total = 0
 		for car_color in car_colors:
