@@ -78,6 +78,15 @@ car_colors = []
 list_of_colors = []
 color_counts = []
 
+def maximum(list):
+	current_max = list[0]
+	for n in list:
+		if n > current_max:
+			current_max = n
+
+	return current_max
+
+
 def most_popular_color(car_colors):
 	for i in range(1, len(lines)):
 		info = lines[i].rstrip().split(",")
@@ -96,15 +105,6 @@ def most_popular_color(car_colors):
 				total += 1
 
 		color_counts.append(total)
-
-
-	def maximum(color_counts):
-		current_max = color_counts[0]
-		for n in color_counts:
-			if n > current_max:
-				current_max = n
-
-		return current_max
 
 	return maximum(color_counts)
 
