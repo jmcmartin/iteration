@@ -63,12 +63,21 @@ print switch_words("The quick brown fox jumps over the lazy dog", "fox", "dog")
 
 #Number 4
 
+
+
 list_of_censored_words = ["fuck", "shit", "ass", "bitch"]
 replacement_words = ["heck", "poop", "butt", "friend"]
 
+censored_phrase = []
 
-"""def censor_text(phrase, bad_words, good_words):
-	return phrase.replace(good_words, bad_words)
+def censor_text(phrase, bad_words, good_words):
+	for i in phrase:
+		if phrase[i: ] == list_of_censored_words:
+			censored_phrase.append(replacement_words)
 
+		else:
+			censored_phrase.append(i)
 
-print censor_text("What the fuck is this shit you bitch ass", list_of_censored_words, replacement_words)"""
+	return censored_phrase
+
+print censor_text("What the fuck is this shit you bitch ass", list_of_censored_words, replacement_words)
