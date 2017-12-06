@@ -27,10 +27,10 @@ print " "
 print move_down_two("D", scale)
 print verse2
 print " "
-print move_down_two("A", scale), move_down_two("F", scale)
+print move_down_two("B", scale)
 print verse3
 print " "
-print move_down_two("C", scale)
+print move_down_two("C", scale), move_down_two("B", scale), move_down_two("A", scale)
 print verse4
 print " "
 print move_down_two("C", scale)
@@ -39,14 +39,14 @@ print " "
 print move_down_two("D", scale), move_down_two("F", scale)
 print verse6
 print " "
-print move_down_two("A", scale)
+print move_down_two("B", scale)
 print verse7
 print " "
-print move_down_two("A", scale)
+print move_down_two("C", scale)
 print verse8
 print " "
-print move_down_two("A", scale)
+print move_down_two("B", scale), move_down_two("A", scale), move_down_two("G", scale)
 print verse9
 print " "
-print move_down_two("A", scale)
+print move_down_two("F", scale)
 print verse10
