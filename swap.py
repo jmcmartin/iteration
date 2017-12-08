@@ -15,13 +15,7 @@ def replace_letter(phrase, swapped_letter, final_letter):
 
 print replace_letter("banana", "a", "!")
 
-	#Alternate Method
-"""def replace_letters(phrase, swapped_letter, final_letter):
-	return phrase.replace(swapped_letter, final_letter)
-
-print replace_letters("banana", "a", "!")"""
-
-
+	
 #Number 2
 
 new_phrase2 = []
@@ -41,44 +35,65 @@ def switch_letters(phrase, swapped_letter_1, swapped_letter_2):
 
 print switch_letters("textbook", "e", "o")
 
-	#Alternate Method
-
-"""def switch_letters2(phrase, swapped_letter_1, swapped_letter_2):
-	return phrase.replace(swapped_letter_1, "!").replace(swapped_letter_2, "@").replace("!", swapped_letter_2).replace("@", swapped_letter_1)
-
-print switch_letters2("textbook", "e", "o")"""
-
-
 
 #Number 3
 
+#Split function to break up the original bad sentence
+def split_sentence(first_sentence):
+	first_sentence += ' '
+	word = ''
+	split_list = []
+
+	for i in range(len(first_sentence)):
+		if first_sentence[i] != ' ':
+			word += first_sentence[i]
+
+		else:
+			split_list.append(word)
+			word = ''
+
+	return split_list
 
 
 def switch_words(phrase, word1, word2):
-	return phrase.replace(word1, "!").replace(word2, "$").replace("!", word2).replace("$", word1)
+	new_sentence = ""
+	check_words = split_sentence(phrase)
+	for i in range(len(check_words)):
+		if check_words[i] == word1:
+			new_sentence += word2
+			new_sentence += ' '
+
+		elif check_words[i] == word2:
+			new_sentence += word1
+			new_sentence += ' '
+
+		else:
+			new_sentence += check_words[i]
+			new_sentence += ' '
+
+	return new_sentence
 
 print switch_words("The quick brown fox jumps over the lazy dog", "fox", "dog")
 
 
 
 #Number 4
-
 	
+
+list_of_censored_words = ["fuck", "shit", "ass", "bitch"]
+replacement_words = ["heck", "poop", "butt", "friend"]
 
 def censor_text(bad_sentence):
-	list_of_censored_words = ["fuck", "shit", "ass", "bitch"]
-	replacement_words = ["heck", "poop", "butt", "friend"]
+	good_sentence = ""
+	check_words = split_sentence(bad_sentence)
+	for i in range(len(check_words)):
+		if check_words[i] not in list_of_censored_words:
+			good_sentence += check_words[i] + ' '
+		for n in range(len(list_of_censored_words)):
+			if check_words[i] == list_of_censored_words[n]:
+				good_sentence += replacement_words[n] + ' '
 
-	word = bad_sentence.split()
-	new_sentence = " "
+	return good_sentence
+
 	
-	for i in range(len(word)):
-		if list_of_censored_words[i] == word[i]:
-			new_sentence = new_sentence + replacement_words[i] + " "
-
-		else:
-			new_sentence = new_sentence + word[i] + " "
-
-	return new_sentence
-
 print censor_text("What the fuck is this shit you bitch ass")
