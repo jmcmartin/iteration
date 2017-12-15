@@ -25,7 +25,7 @@ def split_sentence(first_sentence):
 
 	return split_list
 
-def num_of_songs_and_bands():
+def num_of_songs_and_bands(num_of_bands, num_of_songs):
 	for i in range(1, len(lines)):
 		info = split_sentence(lines[i])
 
@@ -35,7 +35,7 @@ def num_of_songs_and_bands():
 		if info[1] not in list_of_songs:
 			list_of_songs.append(info[1])
 
-
+		
 	num_of_bands = len(list_of_bands)
 	num_of_all_songs = len(list_of_songs)
 
@@ -60,31 +60,59 @@ def songs_per_band(list_of_songs, requested_band):
 		return songs_of_requested_band
 
 
+
 def times_band_was_played(requested_band):
 	total_times_played = 0
 
 	for i in range(1, len(lines)):
 		info = split_sentence(lines[i])
+		individual_num_of_plays = int(info[2])
 
 		if info[0] == requested_band:
-			total_times_played == total_times_played + info[2]
+			total_times_played = total_times_played + individual_num_of_plays
+
+	if total_times_played >= 100:
+		print "Also, you have listened to your favorite band", requested_band, total_times_played, "times this year. That's a lot of times played!"
+
+	else:
+		print "Also, you have listened to your favorite band", requested_band, total_times_played, "times this year. Im surprised you haven't listened to your favorite band more than this!"
 
 
-	print "You have listened to your favorite band", requested_band, total_times_played, "times this year."
 
+def most_played_song():
+	most_played = 0
+	for i in range(1, len(lines)):
+		info = split_sentence(lines[i])
+		
+		if int(info[2]) >= most_played:
+			most_played = int(info[2])
+			band_of_most_played = info[0]
+			song_most_played = info[1]
 
+	print "The most played song in the playlist is", song_most_played, "by", band_of_most_played, "which was listened to", most_played, "times."
+
+def least_played_song():
+	least_played = 0
+	for i in range(1, len(lines)):
+		info = split_sentence(lines[i])
+		
+
+		
 
 print "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 print " "
 print "APCSP Final"
 print " "
 print " "
-print num_of_songs_and_bands()
+num_of_songs_and_bands(list_of_bands, list_of_songs)
+print " "
+print " "
+most_played_song()
 print " "
 print " "
 print songs_per_band(list_of_songs, "AC/DC")
 print " "
 print " "
-print times_band_was_played("AC/DC")
+times_band_was_played("AC/DC")
 print " "
 print "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
