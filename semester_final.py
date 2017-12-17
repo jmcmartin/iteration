@@ -105,9 +105,10 @@ def least_played_song():
 
 
 def display_playlist():
+	print "This is your playlist:"
+	print " "
 	for i in range(1, len(lines)):
 		info = split_sentence(lines[i])
-		print "This is your playlist:"
 		print info[1], "by", info[0], "which you listened to", info[2], "times."
 	
 
