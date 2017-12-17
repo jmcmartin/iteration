@@ -96,7 +96,7 @@ def least_played_song():
 	for i in range(1, len(lines)):
 		info = split_sentence(lines[i])
 		
-		if int(info[2]) <= most_played:
+		if int(info[2]) <= least_played:
 			least_played = int(info[2])
 			band_of_least_played = info[0]
 			song_least_played = info[1]
