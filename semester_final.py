@@ -93,15 +93,16 @@ def most_played_song():
 
 def least_played_song():
 	least_played = 0
+	song_least_played = ""
 	for i in range(1, len(lines)):
 		info = split_sentence(lines[i])
 		
 		if int(info[2]) <= least_played:
 			least_played = int(info[2])
 			band_of_least_played = info[0]
-			x = info[1]
+			song_least_played = info[1]
 	
-	print "The least played song in the playlist is", x, "by", band_of_least_played, "which was listened to", least_played, "times."
+	print "The least played song in the playlist is", song_least_played, "by", band_of_least_played, "which was listened to", least_played, "times."
 
 
 def display_playlist():
