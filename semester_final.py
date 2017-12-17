@@ -99,9 +99,9 @@ def least_played_song():
 		if int(info[2]) <= least_played:
 			least_played = int(info[2])
 			band_of_least_played = info[0]
-			song_played_least = info[1]
+			x = info[1]
 	
-	print "The least played song in the playlist is", song_played_least, "by", band_of_least_played, "which was listened to", least_played, "times."
+	print "The least played song in the playlist is", x, "by", band_of_least_played, "which was listened to", least_played, "times."
 
 
 def display_playlist():
