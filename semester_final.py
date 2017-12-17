@@ -94,6 +94,8 @@ def most_played_song():
 def least_played_song():
 	least_played = 0
 	song_least_played = ""
+	band_of_least_played = ""
+	
 	for i in range(1, len(lines)):
 		info = split_sentence(lines[i])
 		
