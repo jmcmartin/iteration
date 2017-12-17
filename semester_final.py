@@ -96,18 +96,36 @@ def least_played_song():
 	for i in range(1, len(lines)):
 		info = split_sentence(lines[i])
 		
+		if int(info[2]) <= most_played:
+			least_played = int(info[2])
+			band_of_least_played = info[0]
+			song_least_played = info[1]
+	
+	print "The least played song in the playlist is", song_least_played, "by", band_of_least_played, "which was listened to", least_played, "times."
 
-		
+
+def display_playlist():
+	for i in range(1, len(lines)):
+		info = split_sentence(lines[i])
+		print "This is your playlist:"
+		print info[1], "by", info[0], "which you listened to", info[2], "times."
+	
 
 print "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 print " "
 print "APCSP Final"
 print " "
 print " "
+display_playlist()
+print " "
+print " "
 num_of_songs_and_bands(list_of_bands, list_of_songs)
 print " "
 print " "
 most_played_song()
+print " "
+print " "
+least_played_song()
 print " "
 print " "
 print songs_per_band(list_of_songs, "AC/DC")
