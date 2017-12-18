@@ -101,7 +101,7 @@ def least_played_song():
 			band_of_least_played = info[0]
 			song_least_played = info[1]
 	
-	print "The least played song in the playlist is", song_least_played, "by", band_of_least_played, "which was listened to", least_played, "times."
+			print "The least played song in the playlist is", song_least_played, "by", band_of_least_played, "which was listened to", least_played, "times."
 
 
 def display_playlist():
