@@ -1,9 +1,10 @@
 # https://www.braceyourself.io/apcsp/transposition/
 # https://tabs.ultimate-guitar.com/tab/foreigner/juke_box_hero_chords_1794057?simplified=1
-# A Bb B C Db D Eb E F Gb G Ab
-# A A# B C C# D d# E F F# G G#
-def
 
+def keyshift(scale, chord, movement):
+	chord_key = scale.index(chord)
+	transposed = scale[chord_key - movement]
+	return transposed
 
 def transpose_song(song_info, scale, movement):
 	song_info += ' '
@@ -38,8 +39,11 @@ def transpose_song(song_info, scale, movement):
 			transposed += '\n'
 	return transposed
 
+transpose_song()
 
-lyrics_and_cords_original = """   E
+
+lyrics_and_cords_original = """
+				   E
 1. Standing in the rain with his head hung low.
                                          D  
 Couldn't get a ticket, it was a sold out show.
